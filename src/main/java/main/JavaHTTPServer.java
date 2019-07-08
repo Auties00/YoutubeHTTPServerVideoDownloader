@@ -14,7 +14,6 @@ public class JavaHTTPServer {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/api/download/", new Handler());
         server.createContext("/download/mp3/", new MP3Handler());
-        server.createContext("/search/", new SearchHandler());
         server.setExecutor(Executors.newCachedThreadPool());
         server.start();
 
